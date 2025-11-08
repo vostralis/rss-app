@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:latest
+    restart: no
+    environment:
+      - POSTGRES_USER=kava
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=box
+    ports:
+      - "5432:5432"	
+    volumes:
+      - box-data:/var/lib/postgresql/data
+
+volumes:
+    box-data:
